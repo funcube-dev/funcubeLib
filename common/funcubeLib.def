@@ -1,0 +1,67 @@
+;    Copyright 2013 (c) AMSAT-UK
+;
+;    This file is part of FUNcubeLib.
+;
+;    FUNcubeLib is free software: you can redistribute it and/or modify
+;    it under the terms of the GNU General Public License as published by
+;    the Free Software Foundation, either version 3 of the License, or
+;    (at your option) any later version.
+;
+;    FUNcubeLib is distributed in the hope that it will be useful,
+;    but WITHOUT ANY WARRANTY; without even the implied warranty of
+;    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+;    GNU General Public License for more details.
+;
+;    You should have received a copy of the GNU General Public License
+;    along with FUNcubeLib If not, see <http://www.gnu.org/licenses/>.
+;
+; FuncubeLib.def : Declares the module parameters.
+
+LIBRARY      "funcubeLib.dll"
+
+EXPORTS;
+
+EXPORTS;
+Pa_GetVersion                       @1
+
+Dongle_Initialize                   @70
+Dongle_Shutdown                     @71
+Dongle_Exists                       @72
+Dongle_GetFrequency                 @73
+Dongle_SetFrequency                 @74
+Dongle_BiasTEnable                  @75
+
+Decode_Initialize                   @80
+Decode_Shutdown                     @81
+Decode_EnumDevices					@82
+Decode_Start                        @83
+Decode_StartByIndex                 @84
+Decode_Stop                         @85
+Decode_SetManualTuneFrequency       @86
+Decode_SetAutoTuneFrequencyRange	@87
+Decode_CollectFftOutput             @88
+Decode_CollectFftOutputByRange      @89
+Decode_SetOnDataCallback            @90
+Decode_SetOnDataReadyCallback       @91
+Decode_EnableMonitorAudio           @92
+Decode_RemoveDCOffset               @93
+Decode_RefreshAudioDevices          @94
+Decode_IsStarted                    @95
+Decode_SetTrackingParams            @96
+Decode_SetPeakDetectParams			@97
+Decode_SetWorkerCount				@98
+Decode_GetWorkerPeaks				@99
+Decode_GetWorkerAvailability		@100
+Decode_ExcludePeaks					@101
+Decode_CollectLastData              @102
+
+Encode_Initialize					@110
+Encode_Shutdown						@111
+Encode_CanCollect					@112
+Encode_AllDataCollected				@113
+Encode_CollectSamples				@114
+Encode_PushData						@115
+
+Library_GetVersion                  @120
+Library_CheckFftwExists             @121
+Library_SetOnLogMessageCallback     @124

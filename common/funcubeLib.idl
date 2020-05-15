@@ -1,0 +1,105 @@
+// FuncubeLib.idl : IDL source for FuncubeLib
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (FuncubeLib.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(1A75C62B-02E8-46D6-B866-D43C58962610),
+	dual,
+	nonextensible,
+	helpstring("IDtmf Interface"),
+	pointer_default(unique)
+]
+interface IDtmf : IDispatch{
+	[id(1), helpstring("method PlayTone")] HRESULT PlayTone([in] BSTR Keys, [out,retval] VARIANT_BOOL* result);
+	[id(2), helpstring("method Initialise")] HRESULT Initialise([in] FLOAT FreqOffsetPercent, [in] FLOAT Amplitude, [in] USHORT DurationMs, [in] USHORT MarkToSpace, [out,retval] VARIANT_BOOL* result);
+	[id(3), helpstring("method Shutdown")] HRESULT Shutdown([out,retval] VARIANT_BOOL* result);
+
+	[propget, id(4), helpstring("property MarkSpaceRatio")] HRESULT MarkSpaceRatio([out, retval] USHORT* pVal);
+	[propput, id(4), helpstring("property MarkSpaceRatio")] HRESULT MarkSpaceRatio([in] USHORT newVal);
+	[propget, id(5), helpstring("property DurationMs")] HRESULT DurationMs([out, retval] USHORT* pVal);
+	[propput, id(5), helpstring("property DurationMs")] HRESULT DurationMs([in] USHORT newVal);
+	[propget, id(6), helpstring("property FrequencyOffsetPercent")] HRESULT FrequencyOffsetPercent([out, retval] FLOAT* pVal);
+	[propput, id(6), helpstring("property FrequencyOffsetPercent")] HRESULT FrequencyOffsetPercent([in] FLOAT newVal);	
+	[propget, id(7), helpstring("property Amplitude")] HRESULT Amplitude([out, retval] FLOAT* pVal);
+	[propput, id(7), helpstring("property Amplitude")] HRESULT Amplitude([in] FLOAT newVal);
+	[propget, id(8), helpstring("property QueuedTonesCount")] HRESULT QueuedTonesCount([out, retval] LONG* pVal);
+
+	[id(9), helpstring("method PlayFreq")] HRESULT PlayFrequency([in] FLOAT Frequency, [in] FLOAT Amplitude, [in] USHORT Channel, [out,retval] VARIANT_BOOL* result);
+};
+[
+	object,
+	uuid(28ADC97C-A37A-400B-B920-D733DF6B635E),
+	dual,
+	nonextensible,
+	helpstring("IDecode Interface"),
+	pointer_default(unique)
+]
+interface IDecode : IDispatch{
+	[id(1), helpstring("method Initialise")] HRESULT Initialise([in] VARIANT_BOOL outputAudio, [in] VARIANT_BOOL directCct, [in] VARIANT_BOOL funcubeMode, [out,retval] VARIANT_BOOL* retval);
+	[id(2), helpstring("method Shutdown")] HRESULT Shutdown([out,retval] VARIANT_BOOL* retval);
+	[id(3), helpstring("method PlayWavFile")] HRESULT PlayWavFile([in] BSTR FileName, [out,retval] VARIANT_BOOL* result);
+	[id(4), helpstring("method GetFftOutput")] HRESULT GetFftOutput([in][out] SAFEARRAY(FLOAT)* buffer, [out,retval] ULONG* readElements);
+
+	[propget, id(5), helpstring("property CentreFrequency")] HRESULT CentreFrequency([out, retval] FLOAT* pVal);
+	[propput, id(5), helpstring("property CentreFrequency")] HRESULT CentreFrequency([in] FLOAT newVal);
+};
+[
+	object,
+	uuid(1D98F33B-E9AF-490B-A3B0-1857D99ECC48),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface IDongle : IDispatch{
+	[id(1), helpstring("method Exists")] HRESULT Exists([out,retval] VARIANT_BOOL* retval);
+	[id(2), helpstring("method SetFrequency")] HRESULT SetFrequency([in] ULONG frequency, [out,retval] VARIANT_BOOL* retval);
+};
+[
+	uuid(6C69F255-0A3F-4103-B103-2B4076956D6E),
+	version(1.0),
+	helpstring("FuncubeLib 1.0 Type Library")
+]
+library FuncubeLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(755C4883-7159-4BF1-98A3-00C280C675E7),
+		helpstring("Dtmf Class")
+	]
+	coclass Dtmf
+	{
+		[default] interface IDtmf;
+	};
+	[
+		uuid(9A15AA38-D326-4A47-8D5C-1C98C17BC3C3),
+		helpstring("_IDecodeEvents Interface")
+	]
+	dispinterface _IDecodeEvents
+	{
+		properties:
+		methods:			
+			[id(1), helpstring("method DataReceived")] HRESULT DataReceived([in] VARIANT buffer);
+	};
+	[
+		uuid(9ABD414D-E0BB-48EE-B713-D4783400AD65),
+		helpstring("Decode Class")
+	]
+	coclass Decode
+	{
+		[default] interface IDecode;
+		[default, source] dispinterface _IDecodeEvents;
+	};
+	[
+		uuid(90F5F709-A8F6-4E66-81A4-85878882FC97)		
+	]
+	coclass Dongle
+	{
+		[default] interface IDongle;
+	};
+};

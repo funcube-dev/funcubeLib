@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{128D0684-3861-46B1-8ECE-36EE5E797F7C}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfAtl>Static</UseOfAtl>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfAtl>Static</UseOfAtl>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IntDir>$(SolutionDir)build\$(Configuration)\$(ProjectName)</IntDir>
+    <OutDir>$(SolutionDir)Output\$(Configuration)\$(PlatformTarget)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IntDir>$(SolutionDir)build\$(Configuration)\$(ProjectName)</IntDir>
+    <OutDir>$(SolutionDir)Output\$(Configuration)\$(PlatformTarget)\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;PA_WDMKS_NO_KSGUID_LIB;_DEBUG;_WINDOWS;_USRDLL;FUNCUBELIB_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\win\portAudio\src\os\win;..\win\portAudio\src\common;..\win\portAudio\include;..\win\fftw\include;Win\googletest\include;Win\googlemock\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <LanguageStandard>stdcpp14</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <AdditionalLibraryDirectories>..\Win\fftw\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libfftw3f-3.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ModuleDefinitionFile>$(ProjectDir)FuncubeLib.def</ModuleDefinitionFile>
+      <DelayLoadDLLs>libfftw3f-3.dll;portaudio.dll</DelayLoadDLLs>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;PA_WDMKS_NO_KSGUID_LIB;NDEBUG;_WINDOWS;_USRDLL;FUNCUBELIB_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\win\portAudio\src\os\win;..\win\portAudio\src\common;..\win\portAudio\include;..\win\fftw\include;Win\googletest\include;Win\googlemock\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <LanguageStandard>stdcpp14</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>..\win\fftw\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libfftw3f-3.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ModuleDefinitionFile>$(ProjectDir)FuncubeLib.def</ModuleDefinitionFile>
+      <MapExports>true</MapExports>
+      <GenerateWindowsMetadata>true</GenerateWindowsMetadata>
+      <DelayLoadDLLs>libfftw3f-3.dll;portaudio.dll</DelayLoadDLLs>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\win\portAudio\src\os\win;..\win\portAudio\src\common;..\win\portAudio\include;..\win\fftw\include;Win\googletest\include;Win\googlemock\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <WarningLevel>Level3</WarningLevel>
+      <LanguageStandard>stdcpp14</LanguageStandard>
+      <PreprocessorDefinitions>WIN32;PA_WDMKS_NO_KSGUID_LIB</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\win\portAudio\src\os\win;..\win\portAudio\src\common;..\win\portAudio\include;..\win\fftw\include;Win\googletest\include;Win\googlemock\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <WarningLevel>Level3</WarningLevel>
+      <LanguageStandard>stdcpp14</LanguageStandard>
+      <PreprocessorDefinitions>WIN32;PA_WDMKS_NO_KSGUID_LIB</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="funcubeLib.cpp" />
+    <ClCompile Include="bpskDecoder.cpp" />
+    <ClCompile Include="codecAO40.cpp" />
+    <ClCompile Include="decode.cpp" />
+    <ClCompile Include="decodeManager.cpp" />
+    <ClCompile Include="decodeWorker.cpp" />
+    <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="dongle.cpp" />
+    <ClCompile Include="encode.cpp" />
+    <ClCompile Include="encodeWorker.cpp" />
+    <ClCompile Include="fec.cpp" />
+    <ClCompile Include="fft.cpp" />
+    <ClCompile Include="firFilter.cpp" />
+    <ClCompile Include="memPool.cpp" />
+    <ClCompile Include="oscillator.cpp" />
+    <ClCompile Include="overlappedFft.cpp" />
+    <ClCompile Include="peakDetect.cpp" />
+    <ClCompile Include="peakDetectWorker.cpp" />
+    <ClCompile Include="rollingAverage.cpp" />
+    <ClCompile Include="sampleStopWatch.cpp" />
+    <ClCompile Include="stopWatch.cpp" />
+    <ClCompile Include="viterbi.cpp" />
+    <ClCompile Include="..\win\portaudio\src\common\pa_allocation.c" />
+    <ClCompile Include="..\win\portaudio\src\common\pa_converters.c" />
+    <ClCompile Include="..\win\portaudio\src\common\pa_cpuload.c" />
+    <ClCompile Include="..\win\portaudio\src\common\pa_debugprint.c" />
+    <ClCompile Include="..\win\portaudio\src\common\pa_dither.c" />
+    <ClCompile Include="..\win\portaudio\src\common\pa_front.c" />
+    <ClCompile Include="..\win\portaudio\src\common\pa_process.c" />
+    <ClCompile Include="..\win\portaudio\src\common\pa_ringbuffer.c" />
+    <ClCompile Include="..\win\portaudio\src\common\pa_stream.c" />
+    <ClCompile Include="..\win\portaudio\src\common\pa_trace.c" />
+    <ClCompile Include="..\win\portaudio\src\hostapi\dsound\pa_win_ds.c" />
+    <ClCompile Include="..\win\portaudio\src\hostapi\dsound\pa_win_ds_dynlink.c" />
+    <ClCompile Include="..\win\portaudio\src\hostapi\wasapi\pa_win_wasapi.c" />
+    <ClCompile Include="..\win\portaudio\src\hostapi\wdmks\pa_win_wdmks.c" />
+    <ClCompile Include="..\win\portaudio\src\hostapi\wmme\pa_win_wmme.c" />
+    <ClCompile Include="..\win\portaudio\src\os\win\pa_win_coinitialize.c" />
+    <ClCompile Include="..\win\portaudio\src\os\win\pa_win_hostapis.c" />
+    <ClCompile Include="..\win\portaudio\src\os\win\pa_win_util.c" />
+    <ClCompile Include="..\win\portaudio\src\os\win\pa_win_waveformat.c" />
+    <ClCompile Include="..\win\portaudio\src\os\win\pa_win_wdmks_utils.c" />
+    <ClCompile Include="..\win\portaudio\src\os\win\pa_x86_plain_converters.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="funcubeLib.idl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="funcubeLib.def" />
+    <None Include="..\win\fftw\libfftw3f-3.def" />
+    <None Include="..\win\portaudio\build\msvc\portaudio.def" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="audioBufferConfig.h" />
+    <ClInclude Include="funcubeLib.h" />
+    <ClInclude Include="bpskDecoder.h" />
+    <ClInclude Include="codecAO40.h" />
+    <ClInclude Include="decode.h" />
+    <ClInclude Include="decodeManager.h" />
+    <ClInclude Include="decoder.h" />
+    <ClInclude Include="decodeResult.h" />
+    <ClInclude Include="decodeWorker.h" />
+    <ClInclude Include="dllmain.h" />
+    <ClInclude Include="dongle.h" />
+    <ClInclude Include="encode.h" />
+    <ClInclude Include="encodeWorker.h" />
+    <ClInclude Include="fec.h" />
+    <ClInclude Include="fECConstants.h" />
+    <ClInclude Include="fft.h" />
+    <ClInclude Include="firFilter.h" />
+    <ClInclude Include="guardInterlock.h" />
+    <ClInclude Include="hidapi.h" />
+    <ClInclude Include="iaudioPublisher.h" />
+    <ClInclude Include="iaudioSink.h" />
+    <ClInclude Include="iaudioSource.h" />
+    <ClInclude Include="iaecoder.h" />
+    <ClInclude Include="iaecodeResult.h" />
+    <ClInclude Include="iancoder.h" />
+    <ClInclude Include="memPool.h" />
+    <ClInclude Include="oscillator.h" />
+    <ClInclude Include="overlappedFft.h" />
+    <ClInclude Include="peakDetect.h" />
+    <ClInclude Include="peakDetectWorker.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="rollingAverage.h" />
+    <ClInclude Include="rollingAverageComplex.h" />
+    <ClInclude Include="sampleStopWatch.h" />
+    <ClInclude Include="stopWatch.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="versionNo.h" />
+    <ClInclude Include="viterbi.h" />
+    <ClInclude Include="..\win\fftw\include\fftw3.h" />
+    <ClInclude Include="..\win\portaudio\include\pa_win_ds.h" />
+    <ClInclude Include="..\win\portaudio\include\pa_win_wasapi.h" />
+    <ClInclude Include="..\win\portaudio\include\pa_win_waveformat.h" />
+    <ClInclude Include="..\win\portaudio\include\pa_win_wdmks.h" />
+    <ClInclude Include="..\win\portaudio\include\pa_win_wmme.h" />
+    <ClInclude Include="..\win\portaudio\include\portaudio.h" />
+    <ClInclude Include="..\win\portaudio\src\common\pa_allocation.h" />
+    <ClInclude Include="..\win\portaudio\src\common\pa_converters.h" />
+    <ClInclude Include="..\win\portaudio\src\common\pa_cpuload.h" />
+    <ClInclude Include="..\win\portaudio\src\common\pa_debugprint.h" />
+    <ClInclude Include="..\win\portaudio\src\common\pa_dither.h" />
+    <ClInclude Include="..\win\portaudio\src\common\pa_endianness.h" />
+    <ClInclude Include="..\win\portaudio\src\common\pa_hostapi.h" />
+    <ClInclude Include="..\win\portaudio\src\common\pa_memorybarrier.h" />
+    <ClInclude Include="..\win\portaudio\src\common\pa_process.h" />
+    <ClInclude Include="..\win\portaudio\src\common\pa_ringbuffer.h" />
+    <ClInclude Include="..\win\portaudio\src\common\pa_stream.h" />
+    <ClInclude Include="..\win\portaudio\src\common\pa_trace.h" />
+    <ClInclude Include="..\win\portaudio\src\common\pa_types.h" />
+    <ClInclude Include="..\win\portaudio\src\common\pa_util.h" />
+    <ClInclude Include="..\win\portaudio\src\hostapi\dsound\pa_win_ds_dynlink.h" />
+    <!--ClInclude Include="..\win\portaudio\src\hostapi\wasapi\mingw-include\audioclient.h" />
+    <ClInclude Include="..\win\portaudio\src\hostapi\wasapi\mingw-include\AudioSessionTypes.h" />
+    <ClInclude Include="..\win\portaudio\src\hostapi\wasapi\mingw-include\devicetopology.h" />
+    <ClInclude Include="..\win\portaudio\src\hostapi\wasapi\mingw-include\endpointvolume.h" />
+    <ClInclude Include="..\win\portaudio\src\hostapi\wasapi\mingw-include\functiondiscoverykeys.h" />
+    <ClInclude Include="..\win\portaudio\src\hostapi\wasapi\mingw-include\FunctionDiscoveryKeys_devpkey.h" />
+    <ClInclude Include="..\win\portaudio\src\hostapi\wasapi\mingw-include\ks.h" />
+    <ClInclude Include="..\win\portaudio\src\hostapi\wasapi\mingw-include\ksguid.h" />
+    <ClInclude Include="..\win\portaudio\src\hostapi\wasapi\mingw-include\ksmedia.h" />
+    <ClInclude Include="..\win\portaudio\src\hostapi\wasapi\mingw-include\ksproxy.h" />
+    <ClInclude Include="..\win\portaudio\src\hostapi\wasapi\mingw-include\ksuuids.h" />
+    <ClInclude Include="..\win\portaudio\src\hostapi\wasapi\mingw-include\mmdeviceapi.h" />
+    <ClInclude Include="..\win\portaudio\src\hostapi\wasapi\mingw-include\propidl.h" />
+    <ClInclude Include="..\win\portaudio\src\hostapi\wasapi\mingw-include\propkey.h" />
+    <ClInclude Include="..\win\portaudio\src\hostapi\wasapi\mingw-include\propkeydef.h" />
+    <ClInclude Include="..\win\portaudio\src\hostapi\wasapi\mingw-include\propsys.h" />
+    <ClInclude Include="..\win\portaudio\src\hostapi\wasapi\mingw-include\rpcsal.h" />
+    <ClInclude Include="..\win\portaudio\src\hostapi\wasapi\mingw-include\sal.h" />
+    <ClInclude Include="..\win\portaudio\src\hostapi\wasapi\mingw-include\sdkddkver.h" />
+    <ClInclude Include="..\win\portaudio\src\hostapi\wasapi\mingw-include\shtypes.h" />
+    <ClInclude Include="..\win\portaudio\src\hostapi\wasapi\mingw-include\structuredquery.h" /-->
+    <ClInclude Include="..\win\portaudio\src\os\win\pa_win_coinitialize.h" />
+    <ClInclude Include="..\win\portaudio\src\os\win\pa_win_wdmks_utils.h" />
+    <ClInclude Include="..\win\portaudio\src\os\win\pa_x86_plain_converters.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="funcubeLib.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
