@@ -1,5 +1,5 @@
 #include <string.h>
-#include "CodecAO40.h"
+#include "codecAO40.h"
 
 /* ---------------------- */
 /* AO40 Encoder - Decoder */

@@ -20,7 +20,7 @@
 //
 //////////////////////////////////////////////////////////////////////
 #include "math.h"
-#include "Oscillator.h"
+#include "oscillator.h"
 
 
 COscillator::COscillator(void)

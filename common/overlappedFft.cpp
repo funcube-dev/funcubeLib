@@ -1,4 +1,4 @@
-#include "OverlappedFft.h"
+#include "overlappedFft.h"
 
 COverlappedFft::COverlappedFft(void) : 
 	m_current(NULL),

@@ -21,8 +21,8 @@
 //////////////////////////////////////////////////////////////////////
 #pragma once
 #include <queue>
-#include "FuncubeLib.h"
-#include "MemPool.h"
+#include "funcubeLib.h"
+#include "memPool.h"
 
 // forward Declaration
 class CPeakDetect;

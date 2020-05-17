@@ -21,15 +21,15 @@
 //////////////////////////////////////////////////////////////////////
 #pragma once
 
-#include "DecodeManager.h"
-#include "MemPool.h"
-#include "Viterbi.h"
-#include "CodecAO40.h"
-#include "FirFilter.h"
-#include "Oscillator.h"
-#include "Fec.h"
-#include "SampleStopWatch.h"
-#include "IDecoder.h"
+#include "decodeManager.h"
+#include "memPool.h"
+#include "viterbi.h"
+#include "codecAO40.h"
+#include "firFilter.h"
+#include "oscillator.h"
+#include "fec.h"
+#include "sampleStopWatch.h"
+#include "idecoder.h"
 
 #define BIT_PHASE_INC_4K8 ((FLOAT)(1.0F / SAMPLE_RATE_4K8));
 #define RX_CARRIER_FREQ_4K8 4800

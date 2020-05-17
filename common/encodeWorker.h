@@ -21,9 +21,9 @@
 //////////////////////////////////////////////////////////////////////
 #pragma once
 #include <queue>
-#include "FuncubeLib.h"
-#include "MemPool.h"
-#include "IEncoder.h"
+#include "funcubeLib.h"
+#include "memPool.h"
+#include "iencoder.h"
 
 // forward Declaration
 class IEncoder;

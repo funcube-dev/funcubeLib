@@ -26,7 +26,7 @@
 #else
 #include <windows.h>
 #endif
-#include "AutoPtrEx.h"
+#include "autoPtrEx.h"
 #include <stack>
 #include <memory>
 #include <mutex>

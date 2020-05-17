@@ -21,13 +21,13 @@
 //////////////////////////////////////////////////////////////////////
 #pragma once
 #include <queue>
-#include "FuncubeLib.h"
-#include "MemPool.h"
-#include "Fec.h"
-#include "FirFilter.h"
-#include "Oscillator.h"
-#include "IEncoder.h"
-#include "EncodeWorker.h"
+#include "funcubeLib.h"
+#include "memPool.h"
+#include "fec.h"
+#include "firFilter.h"
+#include "oscillator.h"
+#include "iencoder.h"
+#include "encodeWorker.h"
 
 
 // CEncode

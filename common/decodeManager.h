@@ -21,19 +21,19 @@
 //////////////////////////////////////////////////////////////////////
 #pragma once
 #include <queue>
-#include "FuncubeLib.h"
-#include "AudioBufferConfig.h"
-#include "MemPool.h"
-#include "StopWatch.h"
-#include "RollingAverage.h"
-#include "RollingAverageComplex.h"
-#include "IDecodeResult.h"
-#include "IAudioPublisher.h"
-#include "OverlappedFft.h"
-#include "PeakDetect.h"
-#include "DecodeWorker.h"
-#include "PeakDetectWorker.h"
-#include "SampleStopWatch.h"
+#include "funcubeLib.h"
+#include "audioBufferConfig.h"
+#include "memPool.h"
+#include "stopWatch.h"
+#include "rollingAverage.h"
+#include "rollingAverageComplex.h"
+#include "idecodeResult.h"
+#include "iaudioPublisher.h"
+#include "overlappedFft.h"
+#include "peakDetect.h"
+#include "decodeWorker.h"
+#include "peakDetectWorker.h"
+#include "sampleStopWatch.h"
 #include <vector>
 
 #define MAX_DECODERS 32

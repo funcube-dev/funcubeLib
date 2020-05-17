@@ -21,16 +21,16 @@
 //////////////////////////////////////////////////////////////////////
 #pragma once
 #include <queue>
-#include "FuncubeLib.h"
-#include "MemPool.h"
-#include "StopWatch.h"
-#include "RollingAverage.h"
-#include "RollingAverageComplex.h"
-#include "IDecodeResult.h"
-#include "IAudioPublisher.h"
-#include "FirFilter.h"
-#include "OverlappedFft.h"
-#include "PeakDetect.h"
+#include "funcubeLib.h"
+#include "memPool.h"
+#include "stopWatch.h"
+#include "rollingAverage.h"
+#include "rollingAverageComplex.h"
+#include "idecodeResult.h"
+#include "iaudioPublisher.h"
+#include "firFilter.h"
+#include "overlappedFft.h"
+#include "peakDetect.h"
 
 // forward Declaration
 class CBpskDecoder;

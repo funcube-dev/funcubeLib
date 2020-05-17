@@ -20,11 +20,11 @@
 //
 //////////////////////////////////////////////////////////////////////
 #pragma once
-#include "FuncubeLib.h"
-#include "AudioBufferConfig.h"
-#include "IAudioSource.h"
-#include "RollingAverage.h"
-#include "DecodeManager.h"
+#include "funcubeLib.h"
+#include "audioBufferConfig.h"
+#include "iaudioSource.h"
+#include "rollingAverage.h"
+#include "decodeManager.h"
 
 // CDecode
 class CDecode :

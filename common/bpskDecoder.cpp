@@ -19,11 +19,11 @@
 /// @file BpskDecoder.cpp
 //
 //////////////////////////////////////////////////////////////////////
-#include "FuncubeLib.h"
+#include "funcubeLib.h"
 
-#include "Viterbi.h"
-#include "CodecAO40.h"
-#include "BpskDecoder.h"
+#include "viterbi.h"
+#include "codecAO40.h"
+#include "bpskDecoder.h"
 #include <string.h>
 #include <math.h>
 

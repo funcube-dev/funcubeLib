@@ -1,13 +1,13 @@
-#include "FuncubeLib.h"
+#include "funcubeLib.h"
 
 #include "gmock\gmock.h" 
 #include "gtest\gtest.h"
 
 #include "fft.h"
-#include "OverlappedFft.h"
-#include "Oscillator.h"
-#include "FirFilter.h"
-#include "PeakDetect.h"
+#include "overlappedFft.h"
+#include "oscillator.h"
+#include "firFilter.h"
+#include "peakDetect.h"
 /*
 TEST(FftTests, OscillatorSetFreq)
 {

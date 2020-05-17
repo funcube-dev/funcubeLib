@@ -20,7 +20,7 @@
 //
 //////////////////////////////////////////////////////////////////////
 #pragma once
-#include "IAudioSink.h"
+#include "iaudioSink.h"
 
 interface IAudioSource
 {

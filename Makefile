@@ -21,7 +21,7 @@ LIBS=$(shell pkg-config --libs fftw3f libusb-1.0 portaudio-2.0) -lpthread -lrt -
 
 BINS=$(CCPREFIX)bin
 
-ALIB=-L $(BINS) -funcubelib
+ALIB=-L $(BINS) -lfuncubelib
 
 AUDIO_SRCS=common/funcubeLib.cpp \
         common/bpskDecoder.cpp \
@@ -67,7 +67,7 @@ install:    default
 	install -d $(DESTDIR)$(PREFIX)/lib/
 	install -m 644 $(BINS)/libfuncube.a $(DESTDIR)$(PREFIX)/lib/
 	install -d $(DESTDIR)$(PREFIX)/include/funcube
-	install -m 644 common/funcubelib.h $(DESTDIR)$(PREFIX)/include/funcubelib
+	install -m 644 common/funcubeLib.h $(DESTDIR)$(PREFIX)/include/funcubelib
 	install -m 644 common/wintypes.h $(DESTDIR)$(PREFIX)/include/funcubelib
 
 uninstall:    default
@@ -79,10 +79,10 @@ uninstall:    default
 $(BINS):
 	mkdir $(BINS)
 
-$(BINS)/libfuncubelib.so: $(AUDIO_OBJS)
+$(BINS)/libfuncube.so: $(AUDIO_OBJS)
 	$(CCP) -o $@ -shared $(AUDIO_OBJS) $(LIBS)
 
-$(BINS)/libfuncubelib.a: $(AUDIO_OBJS)
+$(BINS)/libfuncube.a: $(AUDIO_OBJS)
 	$(CC_PREFIX)ar -r $@ $(AUDIO_OBJS)
 
 $(BINS)/%.o: common/%.cpp

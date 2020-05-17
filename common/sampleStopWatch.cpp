@@ -19,7 +19,7 @@
 /// @file StopWatch.cpp
 //
 //////////////////////////////////////////////////////////////////////
-#include "SampleStopWatch.h"
+#include "sampleStopWatch.h"
 
 CSampleStopWatch::CSampleStopWatch(void)
 {

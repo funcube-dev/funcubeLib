@@ -26,7 +26,7 @@
  */
 #pragma once
 
-#include "FECConstants.h"
+#include "fecConstants.h"
 
 class CViterbi
 {

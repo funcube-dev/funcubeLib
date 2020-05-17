@@ -19,7 +19,7 @@
 /// @file Dongle.cpp
 //
 //////////////////////////////////////////////////////////////////////
-#include "FuncubeLib.h"
+#include "funcubeLib.h"
 
 #ifdef WIN32
 #include <setupapi.h>
@@ -29,7 +29,7 @@
 #include "fcdhidcmd.h"
 #endif
 
-#include "Dongle.h"
+#include "dongle.h"
 
 
 #ifdef WIN32

@@ -19,11 +19,11 @@
 /// @file FirFilter.cpp
 //
 //////////////////////////////////////////////////////////////////////
-#include "FirFilter.h"
+#include "firFilter.h"
 #include <string.h>
 #include <stdlib.h>
 #include <math.h>
-#include "BpskDecoder.h"
+#include "bpskDecoder.h"
 
 
 CFirFilter::CFirFilter() :

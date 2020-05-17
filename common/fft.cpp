@@ -1,5 +1,5 @@
 #include <math.h>
-#include "Fft.h"
+#include "fft.h"
 #include <functional>
 
 CFft::CFft(void) :

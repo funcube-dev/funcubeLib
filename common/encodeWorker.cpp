@@ -19,13 +19,13 @@
 /// @file EncodeWorker.cpp
 //
 //////////////////////////////////////////////////////////////////////
-#include "FuncubeLib.h"
+#include "funcubeLib.h"
 #include <math.h>
 #include <string.h>
 #include <iostream>
 #include <sstream>
 
-#include "EncodeWorker.h"
+#include "encodeWorker.h"
 
 using namespace std;
 using namespace fc;

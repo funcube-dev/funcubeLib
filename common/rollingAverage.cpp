@@ -19,7 +19,7 @@
 /// @file RollingAverage.h
 //
 //////////////////////////////////////////////////////////////////////
-#include "RollingAverage.h"
+#include "rollingAverage.h"
 
 CRollingAverage::CRollingAverage(void)
 {

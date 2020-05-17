@@ -19,17 +19,17 @@
 /// @file DecodeManager.cpp
 //
 //////////////////////////////////////////////////////////////////////
-#include "FuncubeLib.h"
-#include "AudioBufferConfig.h"
+#include "funcubeLib.h"
+#include "audioBufferConfig.h"
 #include "portaudio.h"
 #include <math.h>
 #include <string.h>
 #include <iostream>
 #include <sstream>
 #include <algorithm>
-#include "BpskDecoder.h"
+#include "bpskDecoder.h"
 
-#include "DecodeManager.h"
+#include "decodeManager.h"
 
 using namespace std;
 using namespace fc;

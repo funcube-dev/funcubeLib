@@ -19,13 +19,13 @@
 /// @file 
 //
 //////////////////////////////////////////////////////////////////////
-#include "FuncubeLib.h"
+#include "funcubeLib.h"
 
-#include "FECConstants.h"
-#include "Viterbi.h"
-#include "CodecAO40.h"
+#include "fecConstants.h"
+#include "viterbi.h"
+#include "codecAO40.h"
 
-#include "Fec.h"
+#include "fec.h"
 
 CFec::CFec(void)
 {

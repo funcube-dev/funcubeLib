@@ -1,14 +1,14 @@
-#include "FuncubeLib.h"
+#include "funcubeLib.h"
 
 #include "gmock\gmock.h" 
 #include "gtest\gtest.h"
 
-#include "FuncubeLib.h"
+#include "funcubeLib.h"
 #include "fec.h"
-#include "CodecAo40.h"
-#include "BpskDecoder.h"
-#include "StopWatch.h"
-#include "Encode.h"
+#include "codecAo40.h"
+#include "bpskDecoder.h"
+#include "stopWatch.h"
+#include "encode.h"
 #include "stdio.h"
 
 using namespace std;

@@ -1,12 +1,12 @@
-#include "FuncubeLib.h"
+#include "funcubeLib.h"
 
 #include "gmock\gmock.h" 
 #include "gtest\gtest.h"
 
 #include "fft.h"
-#include "OverlappedFft.h"
-#include "Oscillator.h"
-#include "FirFilter.h"
+#include "overlappedFft.h"
+#include "oscillator.h"
+#include "firFilter.h"
 
 /*
 TEST(PeakTrackerTests, InsertSort)

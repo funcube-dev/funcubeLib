@@ -20,8 +20,8 @@
 //
 //////////////////////////////////////////////////////////////////////
 #pragma once
-#include "FuncubeLib.h"
-#include "RollingAverage.h"
+#include "funcubeLib.h"
+#include "rollingAverage.h"
 #include "complex.h"
 #include "fftw3.h"
 

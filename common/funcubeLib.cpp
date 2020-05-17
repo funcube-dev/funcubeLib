@@ -19,12 +19,12 @@
 /// @file FuncubeLib.cpp
 //
 //////////////////////////////////////////////////////////////////////
-#include "FuncubeLib.h"
-#include "Dongle.h"
-#include "DecodeManager.h"
-#include "Decode.h"
-#include "Encode.h"
-#include "VersionNo.h"
+#include "funcubeLib.h"
+#include "dongle.h"
+#include "decodeManager.h"
+#include "decode.h"
+#include "encode.h"
+#include "versionNo.h"
 
 using namespace fc;
 

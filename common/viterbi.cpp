@@ -20,7 +20,7 @@
 //
 //////////////////////////////////////////////////////////////////////
 #include <string.h>
-#include "Viterbi.h"
+#include "viterbi.h"
 
 /* --------------- */
 /* Viterbi decoder */

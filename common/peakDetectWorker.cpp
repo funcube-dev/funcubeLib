@@ -19,16 +19,16 @@
 /// @file PeakDetectWorker.cpp
 //
 //////////////////////////////////////////////////////////////////////
-#include "FuncubeLib.h"
+#include "funcubeLib.h"
 #include "portaudio.h"
 #include <math.h>
 #include <string.h>
 #include <iostream>
 #include <sstream>
-#include "StopWatch.h"
-#include "PeakDetect.h"
+#include "stopWatch.h"
+#include "peakDetect.h"
 
-#include "PeakDetectWorker.h"
+#include "peakDetectWorker.h"
 
 using namespace std;
 using namespace fc;

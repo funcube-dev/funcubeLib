@@ -19,16 +19,16 @@
 /// @file Encode.cpp
 //
 //////////////////////////////////////////////////////////////////////
-#include "FuncubeLib.h"
+#include "funcubeLib.h"
 #include "portaudio.h"
 #include <math.h>
 #include <stdlib.h>
 #include <string>
-#include "DecodeManager.h"
-#include "MemPool.h"
-#include "GuardInterlock.h"
+#include "decodeManager.h"
+#include "memPool.h"
+#include "guardInterlock.h"
 
-#include "Encode.h"
+#include "encode.h"
 
 using namespace std;
 using namespace fc;

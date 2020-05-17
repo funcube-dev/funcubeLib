@@ -1,7 +1,7 @@
 #pragma once
 
-#include "FuncubeLib.h"
-#include "Fft.h"
+#include "funcubeLib.h"
+#include "fft.h"
 #include <mutex>
 #ifdef LINUX
 #include "wintypes.h"

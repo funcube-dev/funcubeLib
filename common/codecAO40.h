@@ -22,7 +22,7 @@
 
 #pragma once
 
-#include "FECConstants.h"
+#include "fecConstants.h"
 
 class CCodecAO40
 {

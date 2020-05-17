@@ -21,7 +21,7 @@
 //////////////////////////////////////////////////////////////////////
 #pragma once
 
-#include "FECConstants.h"
+#include "fecConstants.h"
 
 #ifndef BOOL
 typedef int                 BOOL;

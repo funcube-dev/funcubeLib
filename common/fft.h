@@ -1,6 +1,6 @@
 #pragma once
 
-#include "FuncubeLib.h"
+#include "funcubeLib.h"
 #include <memory>
 
 class CFft

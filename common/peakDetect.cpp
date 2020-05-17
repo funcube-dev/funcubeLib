@@ -19,13 +19,13 @@
 /// @file PeakDetect.cpp
 //
 //////////////////////////////////////////////////////////////////////
-#include "FuncubeLib.h"
+#include "funcubeLib.h"
 #include "portaudio.h"
 #include <math.h>
 #include <iostream>
 #include <sstream>
 
-#include "PeakDetect.h"
+#include "peakDetect.h"
 
 using namespace std;
 

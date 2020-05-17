@@ -20,7 +20,7 @@
 //
 //////////////////////////////////////////////////////////////////////
 #pragma once
-#include "FuncubeLib.h"
+#include "funcubeLib.h"
 
 class CFirFilter
 {

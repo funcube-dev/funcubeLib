@@ -19,7 +19,7 @@
 /// @file MemPool.cpp
 //
 //////////////////////////////////////////////////////////////////////
-#include "MemPool.h"
+#include "memPool.h"
 #include <stdlib.h>
 #include <string.h>
 #include <functional>
