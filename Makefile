@@ -63,17 +63,17 @@ clean:
 	-rm -f $(BINS)/*.o $(BINS)/*.so $(BINS)/*.a
 	-rmdir $(BINS) 
 
-install:    default
+install: default
 	install -d $(DESTDIR)$(PREFIX)/lib/
 	install -m 644 $(BINS)/libfuncube.a $(DESTDIR)$(PREFIX)/lib/
-	install -d $(DESTDIR)$(PREFIX)/include/funcube
-	install -m 644 common/funcubeLib.h $(DESTDIR)$(PREFIX)/include/funcubelib
-	install -m 644 common/wintypes.h $(DESTDIR)$(PREFIX)/include/funcubelib
+	install -d $(DESTDIR)$(PREFIX)/include/funcubelib/
+	install -m 644 common/funcubeLib.h $(DESTDIR)$(PREFIX)/include/funcubelib/
+	install -m 644 common/wintypes.h $(DESTDIR)$(PREFIX)/include/funcubelib/
 
-uninstall:    default
+uninstall: default
 	rm $(DESTDIR)$(PREFIX)/lib/libfuncube.a
-	rm $(DESTDIR)$(PREFIX)/include/common/funcube.h
-	rm $(DESTDIR)$(PREFIX)/include/common/wintypes.h
+	rm $(DESTDIR)$(PREFIX)/include/funcubelib/funcubeLib.h
+	rm $(DESTDIR)$(PREFIX)/include/funcubelib/wintypes.h
 	rm -r $(DESTDIR)$(PREFIX)/include/funcubelib
 
 $(BINS):
