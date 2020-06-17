@@ -5,6 +5,22 @@ decodes/encodes data from/for the FUNcube family of satellites, detects and trac
 Current (2020) stable Raspbian or Debian (10.4).
 
 ## building
+
+### Dockerised
+On target (RPi, x86 Debian), you will need [docker](https://docs.docker.com/engine/install/debian/) and ```git``` the following commands will get the dockerfiles
+```bash
+# get the dockerfiles to build the containers
+git clone git://github.com/funcube-dev/docker.git
+cd docker
+# gets the latest code, *note* update will refuse to overwrite code directories (for safety) so 
+# to re-run you will need to manualy remove one or more of them (LimeSuite, go, funcubeLib)
+./update.sh
+# builds the build container and the code.
+./build.sh
+```
+In addition to the ```build.sh``` script there is a ```develop.sh``` script that will start a bash shell in a docker container with all the tools GCC/G++/golang etc to work on the code. This container mounts the go and funcubeLib subdirectories from the host OS, so changes made to the code in the container are persisted outside.
+
+### Native
 On target (RPi, x86 Debian), you will need GNU/make, GCC & G++ plus local dependencies. Note
 that there _may_ be a collision with an existing `libjack-jackd2-0`, which can be avoided by
 swapping it out for the earlier `libjack0` package first, typically:
